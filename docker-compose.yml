@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  spark-notebook:
+    build: .
+    container_name: realestate-spark
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./:/home/jovyan/work     # ⬅️ monte TOUT le repo, y compris .env
+    env_file:
+      - .env
+
